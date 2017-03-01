@@ -1,0 +1,38 @@
+#Pseudocode:
+
+Input: A graph Graph and a starting vertex root of Graph
+Output: Goal state. The parent links trace the shortest path back to root
+
+A non-recursive implementation of breadth-first search:
+
+Breadth-First-Search(Graph, root):
+    
+    create empty set S
+    create empty queue Q      
+
+    root.parent = NIL
+    add root to S
+    Q.enqueue(root)                      
+
+    while Q is not empty:
+        current = Q.dequeue()
+        if current is the goal:
+            return current
+        for each node n that is adjacent to current:
+            if n is not in S:
+                add n to S
+                n.parent = current
+                Q.enqueue(n)
+                
+#The Time Complexity:
+
+  -BFS Gives a O(|V|+|E|) time complexity.
+  view: Performing an O(1) operation L times, results to O(L) complexity.
+        Thus, removing and adding a vertex from/to the Queue is O(1),
+        but when you do that for V vertices, you get O(V) complexity.
+        Therefore, O(V) + O(E) = O(V+E)
+ 
+ #Brain Teaser:
+ 
+  -Breadth-first search is complete, but depth-first search is not.
+ 
