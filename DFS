@@ -1,0 +1,29 @@
+#Pseudocode
+
+Input: A graph G and a vertex v of G
+
+Output: All vertices reachable from v labeled as discovered
+
+A non-recursive implementation of DFS:
+
+  procedure DFS-iterative(G,v):
+      let S be a stack
+      S.push(v)
+      while S is not empty
+          v = S.pop()
+          if v is not labeled as discovered:
+              label v as discovered
+              for all edges from v to w in G.adjacentEdges(v) do 
+                  S.push(w)
+                  
+                  
+The non-recursive implementation is similar to breadth-first search but
+differs from it in two ways:
+  1.it uses a stack instead of a queue, and
+  2.it delays checking whether a vertex has been discovered until the vertex is popped from the stack rather than
+    making this check before pushing the vertex.
+
+
+#Complexity
+
+Time : O(V) + O(E) = O(V+E) ; visiting each V (only once) and visiting all the edges to find out if ending or not.
