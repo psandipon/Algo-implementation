@@ -1,0 +1,22 @@
+Pseudo Code
+
+As an initial input we have the graph (G) and a starting vertex (s).
+
+1.  Make a queue (Q) with all the vertices of G (V);
+2.  For each member of Q set the priority to INFINITY;
+3.  Only for the starting vertex (s) set the priority to 0;
+4.  The parent of (s) should be NULL;
+5.  While Q isn’t empty
+6.     Get the minimum from Q – let’s say (u); (priority queue);
+7.     For each adjacent vertex to (v) to (u)
+8.        If (v) is in Q and weight of (u, v) < priority of (v) then
+9.           The parent of (v) is set to be (u)
+10.          The priority of (v) is the weight of (u, v)
+
+
+
+
+Minimum edge weight data structure	        Time complexity (total)
+adjacency matrix, searching	=                O(|V|^{2})
+binary heap and adjacency list =          	 O((|V|+|E|)\log |V|)=O(|E|\log |V|)
+Fibonacci heap and adjacency list =       	 O(|E|+|V|\log |V|)
